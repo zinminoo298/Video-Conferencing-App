@@ -1,6 +1,6 @@
 package com.xpand.videomeeting.utils
 
-class Constants {
+class Constants() {
 
     companion object{
         val KEY_COLLECTION_USERS = "users"
@@ -33,8 +33,8 @@ class Constants {
         val API_KEY_SERVER = "AAAAKFgkKyM:APA91bHTcUB91zK4HZEt8nz6SukuETnx63H2_N2nkgkrpX-E2ImEjFOLvOpnlOSm2Blxl6io1MiqloVpbZSA8wuZEK-MWYpTvIyIKcv2uelccDHpECc5YB3TgyvD2EmkiMaKpWpGTpif"
     }
 
-    fun getRemoteMessageHeaders(): HashMap<String, String>? {
-        val headers = HashMap<String, String>()
+    fun getRemoteMessageHeaders(): HashMap<String?, String?>? {
+        val headers = HashMap<String?, String?>()
         headers[REMOTE_MSG_AUTHORIZATION] =
             "key=$API_KEY_SERVER"
         headers[REMOTE_MSG_CONTENT_TYPE] =
