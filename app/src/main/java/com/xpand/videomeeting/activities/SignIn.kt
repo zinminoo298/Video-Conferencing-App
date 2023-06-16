@@ -83,23 +83,31 @@ class SignIn : AppCompatActivity() {
                         .size > 0
                 ) {
                     val documentSnapshot: DocumentSnapshot = task.result.documents[0]
-                    preferenceManager!!.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
-                    preferenceManager!!.putString(Constants.KEY_USER_ID, documentSnapshot.id)
-                    preferenceManager!!.putString(
-                        Constants.KEY_FIRST_NAME,
-                        documentSnapshot.getString(Constants.KEY_FIRST_NAME)
-                    )
-                    preferenceManager!!.putString(
-                        Constants.KEY_LAST_NAME,
-                        documentSnapshot.getString(Constants.KEY_LAST_NAME)
-                    )
-                    preferenceManager!!.putString(
-                        Constants.KEY_EMAIL,
-                        documentSnapshot.getString(Constants.KEY_EMAIL)
-                    )
-                    val intent = Intent(applicationContext, MainActivity::class.java)
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-                    startActivity(intent)
+                    if(documentSnapshot.getString(Constants.KEY_FCM_TOKEN) == null){
+                        preferenceManager!!.putBoolean(Constants.KEY_IS_SIGNED_IN, true)
+                        preferenceManager!!.putString(Constants.KEY_USER_ID, documentSnapshot.id)
+                        preferenceManager!!.putString(
+                            Constants.KEY_FIRST_NAME,
+                            documentSnapshot.getString(Constants.KEY_FIRST_NAME)
+                        )
+                        preferenceManager!!.putString(
+                            Constants.KEY_LAST_NAME,
+                            documentSnapshot.getString(Constants.KEY_LAST_NAME)
+                        )
+                        preferenceManager!!.putString(
+                            Constants.KEY_EMAIL,
+                            documentSnapshot.getString(Constants.KEY_EMAIL)
+                        )
+                        val intent = Intent(applicationContext, MainActivity::class.java)
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                        startActivity(intent)
+                    }
+                    else{
+                        signInProgress!!.visibility = View.INVISIBLE
+                        buttonSignIn!!.visibility = View.VISIBLE
+                        Toast.makeText(this, "This user is already signed in", Toast.LENGTH_SHORT)
+                            .show()
+                    }
                 } else {
                     signInProgress!!.visibility = View.INVISIBLE
                     buttonSignIn!!.visibility = View.VISIBLE

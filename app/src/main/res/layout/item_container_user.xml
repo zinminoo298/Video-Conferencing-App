@@ -55,7 +55,7 @@
         app:layout_constraintBottom_toTopOf="@+id/viewDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/colorPrimary" />
+        app:tint="@color/purple_100" />
 
     <ImageView
         android:id="@+id/imageAudioMeeting"
@@ -68,7 +68,7 @@
         app:layout_constraintBottom_toTopOf="@+id/viewDivider"
         app:layout_constraintEnd_toStartOf="@id/imageVideoMeeting"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/colorPrimary" />
+        app:tint="@color/purple_100" />
 
     <TextView
         android:id="@+id/textUserName"

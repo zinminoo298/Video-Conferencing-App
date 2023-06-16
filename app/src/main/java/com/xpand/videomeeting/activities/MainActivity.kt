@@ -94,6 +94,7 @@ class MainActivity : AppCompatActivity(),UserListener {
                     }
                     if (users!!.size > 0) {
                         usersAdapter!!.notifyDataSetChanged()
+                        textErrorMessage!!.visibility = View.INVISIBLE
                     } else {
                         textErrorMessage!!.text = String.format("%s", "No users available")
                         textErrorMessage!!.visibility = View.VISIBLE
@@ -129,7 +130,7 @@ class MainActivity : AppCompatActivity(),UserListener {
         val updates = HashMap<String, Any>()
         updates[Constants.KEY_FCM_TOKEN] = FieldValue.delete()
         documentReference.update(updates)
-            .addOnSuccessListener { aVoid: Void? ->
+            .addOnSuccessListener { _: Void? ->
                 preferenceManager!!.clearPreferences()
                 startActivity(Intent(applicationContext, SignIn::class.java))
                 finish()
