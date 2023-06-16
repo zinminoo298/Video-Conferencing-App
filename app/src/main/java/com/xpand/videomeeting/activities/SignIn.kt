@@ -117,7 +117,7 @@ class SignIn : AppCompatActivity() {
             }
     }
 
-    fun checkPlayServices(context: Context?): Boolean {
+    private fun checkPlayServices(context: Context?): Boolean {
         val resultCode = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(context!!)
         if (resultCode != ConnectionResult.SUCCESS) {
             Log.i(
@@ -127,7 +127,7 @@ class SignIn : AppCompatActivity() {
             return false
         }
         else{
-            println("OK")
+            //OK
         }
         return true
     }

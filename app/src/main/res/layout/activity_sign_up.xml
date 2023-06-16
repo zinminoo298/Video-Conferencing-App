@@ -11,7 +11,7 @@
         android:id="@+id/layoutHeader"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:background="@color/colorPrimary"
+        android:background="@color/purple_100"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="@dimen/_8sdp"
@@ -58,7 +58,7 @@
                 android:fontFamily="@font/ubuntu"
                 android:gravity="center"
                 android:includeFontPadding="false"
-                android:text="@string/we_need_a_few_details_to_get_your_account_ready"
+                android:text="@string/may_we_get_a_few_details"
                 android:textColor="@color/colorPrimaryText"
                 android:textSize="@dimen/_16ssp" />
 
@@ -235,10 +235,11 @@
                     android:layout_height="@dimen/_45sdp"
                     android:layout_marginStart="@dimen/_20sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
-                    android:fontFamily="@font/ubuntu_bold"
+                    android:fontFamily="@font/poppins_semibold"
                     android:includeFontPadding="false"
                     android:text="@string/sign_up"
                     android:textColor="@color/colorTextIcons"
+                    android:background="@drawable/round_corner_button"
                     android:textSize="@dimen/_12ssp" />
 
                 <ProgressBar

@@ -33,7 +33,7 @@
             android:id="@+id/textSignOut"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="More Fonts..."
             android:gravity="center"
             android:includeFontPadding="false"
             android:text="@string/sign_out"
